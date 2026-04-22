@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+@import "tailwindcss";
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", serif;
+  --font-heading: "Space Grotesk", sans-serif;
+
+  --color-primary: #d6b054; /* Logo Gold */
+  --color-primary-dark: #ca9f48; /* Logo Darker Gold */
+  --color-secondary: #5a5a40; /* Olive green */
+  --color-accent: #f5f2ed; /* Warm off-white */
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  @apply bg-white text-gray-900 font-sans;
+}
+
+.parallax-bg {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Shiny Button Effect */
+.btn-shiny {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shiny::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 20%;
+  height: 200%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(30deg);
+  transition: none;
+}
+
+.btn-shiny:hover::after {
+  left: 120%;
+  transition: all 0.6s ease-in-out;
+}
+
+/* Fill Hover Effect */
+.btn-fill {
+  position: relative;
+  background: transparent;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  transition: color 0.3s ease;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn-fill::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--color-primary);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
+.btn-fill:hover {
+  color: white;
+}
+
+.btn-fill:hover::before {
+  width: 100%;
+}

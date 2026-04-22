@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Agapure Edible Oils | Pure & High-Quality</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Inter", sans-serif;
+        scroll-behavior: smooth;
+      }
+      .font-display {
+        font-family: "Playfair Display", serif;
+      }
+      .bg-primary {
+        background-color: #d6b054;
+      }
+      .text-primary {
+        color: #d6b054;
+      }
+      .border-primary {
+        border-color: #d6b054;
+      }
+      .hover-bg-primary:hover {
+        background-color: #ca9f48;
+      }
+
+      /* Slider Transitions */
+      .slide {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+        position: absolute;
+        inset: 0;
+      }
+      .slide.active {
+        opacity: 1;
+        z-index: 10;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900 overflow-x-hidden">
+    <!-- NAVIGATION -->
+    <nav
+      id="navbar"
+      class="fixed top-0 left-0 w-full z-50 bg-white shadow-md py-3 transition-all duration-300"
+    >
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <a href="#" class="flex items-center">
+          <img
+            src="/images/logo.jpg"
+            alt="AGAPURE Logo"
+            class="h-12 md:h-16 w-auto object-contain"
+          />
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex space-x-8">
+          <a
+            href="#home"
+            class="text-sm font-medium uppercase tracking-widest text-gray-700 hover:text-primary transition-colors"
+            >Home</a
+          >
+          <a
+            href="#about-us"
+            class="text-sm font-medium uppercase tracking-widest text-gray-700 hover:text-primary transition-colors"
+            >About Us</a
+          >
+          <a
+            href="#products"
+            class="text-sm font-medium uppercase tracking-widest text-gray-700 hover:text-primary transition-colors"
+            >Products</a
+          >
+          <a
+            href="#why-choose-us"
+            class="text-sm font-medium uppercase tracking-widest text-gray-700 hover:text-primary transition-colors"
+            >Why Us</a
+          >
+          <a
+            href="#contact"
+            class="text-sm font-medium uppercase tracking-widest text-gray-700 hover:text-primary transition-colors"
+            >Contact</a
+          >
+        </div>
+
+        <!-- Mobile Toggle -->
+        <button id="menu-toggle" class="md:hidden text-primary">
+          <i data-lucide="menu" size="28"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-t border-gray-100"
+      >
+        <div class="flex flex-col p-6 space-y-4">
+          <a href="#home" class="mobile-link text-gray-700 font-medium">Home</a>
+          <a href="#about-us" class="mobile-link text-gray-700 font-medium"
+            >About Us</a
+          >
+          <a href="#products" class="mobile-link text-gray-700 font-medium"
+            >Products</a
+          >
+          <a href="#why-choose-us" class="mobile-link text-gray-700 font-medium"
+            >Why Us</a
+          >
+          <a href="#contact" class="mobile-link text-gray-700 font-medium"
+            >Contact</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section
+      id="home"
+      class="relative h-screen min-h-[600px] w-full overflow-hidden bg-black"
+    >
+      <div id="hero-slider" class="absolute inset-0">
+        <!-- Slide 1 -->
+        <div class="slide active">
+          <div class="absolute inset-0 bg-black/40 z-10"></div>
+          <img
+            src="/images/hero-banner.png"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 z-20 flex items-center justify-center text-center px-6"
+          >
+            <div class="max-w-4xl">
+              <h1
+                class="text-5xl md:text-7xl font-bold text-white mb-6 font-display"
+              >
+                Pure & High-Quality Edible Oils
+              </h1>
+              <p class="text-xl md:text-2xl text-white/90 mb-10 font-light">
+                Your trusted partner in delivering quality you can trust.
+              </p>
+              <a
+                href="#products"
+                class="inline-block bg-primary hover-bg-primary text-white px-10 py-4 rounded-full font-bold text-lg transition-all shadow-xl"
+                >Explore Products</a
+              >
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="slide">
+          <div class="absolute inset-0 bg-black/40 z-10"></div>
+          <img
+            src="/images/hero-banner.png"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 z-20 flex items-center justify-center text-center px-6"
+          >
+            <div class="max-w-4xl">
+              <h1
+                class="text-5xl md:text-7xl font-bold text-white mb-6 font-display"
+              >
+                Coimbatore-Based Manufacturer
+              </h1>
+              <p class="text-xl md:text-2xl text-white/90 mb-10 font-light">
+                Specializing in Refined Palm, Groundnut, Sunflower, and Coconut
+                oils.
+              </p>
+              <a
+                href="#about-us"
+                class="inline-block bg-primary hover-bg-primary text-white px-10 py-4 rounded-full font-bold text-lg transition-all shadow-xl"
+                >About Us</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slider Controls -->
+      <button
+        id="prev-slide"
+        class="absolute left-6 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-white/10 text-white hover:bg-white/20"
+      >
+        <i data-lucide="chevron-left" size="32"></i>
+      </button>
+      <button
+        id="next-slide"
+        class="absolute right-6 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-white/10 text-white hover:bg-white/20"
+      >
+        <i data-lucide="chevron-right" size="32"></i>
+      </button>
+    </section>
+
+    <!-- ABOUT US -->
+    <section id="about-us" class="py-24 bg-white">
+      <div
+        class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center"
+      >
+        <div>
+          <h2
+            class="text-primary font-bold uppercase tracking-widest text-sm mb-4"
+          >
+            Who We Are
+          </h2>
+          <h3 class="text-4xl font-bold mb-8 font-display">
+            A Growing Name in the Edible Oil Industry
+          </h3>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            Agapure is a growing name in the edible oil industry, proudly based
+            in Coimbatore, Tamil Nadu. As both a manufacturer and distributor,
+            we have built a reputation for supplying premium-quality cooking
+            oils.
+          </p>
+          <div class="grid grid-cols-2 gap-8 mt-10">
+            <div>
+              <h4 class="font-bold text-xl mb-2">Our Vision</h4>
+              <p class="text-sm text-gray-500">
+                To become a leading and trusted brand in the edible oil sector.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-bold text-xl mb-2">Our Mission</h4>
+              <p class="text-sm text-gray-500">
+                To provide safe, healthy, and affordable cooking oils.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img
+            src="/images/about-us.png"
+            alt="About"
+            class="w-full aspect-[3/2] object-cover rounded-2xl shadow-2xl"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="products" class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2
+            class="text-primary font-bold uppercase tracking-widest text-sm mb-4"
+          >
+            Our Products
+          </h2>
+          <h3 class="text-4xl font-bold font-display">
+            Pure, High-Quality Edible Oils
+          </h3>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Product 1 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-lg group">
+            <div
+              class="h-64 overflow-hidden bg-gray-50 flex items-center justify-center p-4"
+            >
+              <img
+                src="/images/palm-oil.png"
+                class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h4 class="text-xl font-bold mb-3">Refined Palm Oil</h4>
+              <p class="text-gray-500 text-sm">
+                High stability at high temperatures, perfect for deep frying.
+              </p>
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-lg group">
+            <div
+              class="h-64 overflow-hidden bg-gray-50 flex items-center justify-center p-4"
+            >
+              <img
+                src="/images/groundnut-oil.png"
+                class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h4 class="text-xl font-bold mb-3">Groundnut Oil</h4>
+              <p class="text-gray-500 text-sm">
+                Extracted from high-quality peanuts with rich aroma.
+              </p>
+            </div>
+          </div>
+          <!-- Product 3 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-lg group">
+            <div
+              class="h-64 overflow-hidden bg-gray-50 flex items-center justify-center p-4"
+            >
+              <img
+                src="/images/sunflower-oil.png"
+                class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h4 class="text-xl font-bold mb-3">Sunflower Oil</h4>
+              <p class="text-gray-500 text-sm">
+                Low cholesterol and rich in Vitamin E for healthy cooking.
+              </p>
+            </div>
+          </div>
+          <!-- Product 4 -->
+          <div class="bg-white rounded-2xl overflow-hidden shadow-lg group">
+            <div
+              class="h-64 overflow-hidden bg-gray-50 flex items-center justify-center p-4"
+            >
+              <img
+                src="/images/coconut-oil.png"
+                class="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
+              />
+            </div>
+            <div class="p-6">
+              <h4 class="text-xl font-bold mb-3">Coconut Oil</h4>
+              <p class="text-gray-500 text-sm">
+                Natural properties retained for traditional recipes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-24 bg-white">
+      <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16">
+        <div>
+          <h2
+            class="text-primary font-bold uppercase tracking-widest text-sm mb-4"
+          >
+            Contact Us
+          </h2>
+          <h3 class="text-4xl font-bold mb-8 font-display">
+            Get in Touch for Bulk Orders
+          </h3>
+          <div class="space-y-6 mt-10">
+            <div class="flex items-center space-x-4">
+              <i data-lucide="map-pin" class="text-primary"></i>
+              <span>Coimbatore, Tamil Nadu</span>
+            </div>
+            <div class="flex items-center space-x-4">
+              <i data-lucide="phone" class="text-primary"></i>
+              <span>+91 98765 43210</span>
+            </div>
+            <div class="flex items-center space-x-4">
+              <i data-lucide="mail" class="text-primary"></i>
+              <span>rv.vgnesh@gmail.com</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 p-10 rounded-3xl shadow-xl">
+          <form id="contact-form" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <input
+                type="text"
+                name="name"
+                placeholder="Name *"
+                required
+                class="w-full p-4 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-primary/20"
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Email *"
+                required
+                class="w-full p-4 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-primary/20"
+              />
+            </div>
+            <input
+              type="tel"
+              name="phone"
+              placeholder="Phone Number *"
+              required
+              class="w-full p-4 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-primary/20"
+            />
+            <textarea
+              name="message"
+              placeholder="Message"
+              rows="4"
+              class="w-full p-4 border border-gray-200 rounded-xl outline-none focus:ring-2 focus:ring-primary/20"
+            ></textarea>
+            <button
+              type="submit"
+              class="w-full bg-primary hover-bg-primary text-white font-bold py-4 rounded-xl transition-all"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-white py-16">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <img
+          src="/images/logo-footer.jpg"
+          alt="Agapure Logo"
+          class="h-24 mx-auto mb-6 object-contain"
+        />
+        <p class="text-gray-500 max-w-md mx-auto mb-10">
+          Your trusted partner in delivering pure, high-quality edible oils
+          based in Coimbatore.
+        </p>
+        <div class="pt-8 border-t border-white/5 text-gray-600 text-xs">
+          © 2026 Agapure Edible Oils. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Initialize Icons
+      lucide.createIcons();
+
+      // Mobile Menu Toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      const mobileLinks = document.querySelectorAll(".mobile-link");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      mobileLinks.forEach((link) => {
+        link.addEventListener("click", () =>
+          mobileMenu.classList.add("hidden"),
+        );
+      });
+
+      // Hero Slider
+      const slides = document.querySelectorAll(".slide");
+      const nextBtn = document.getElementById("next-slide");
+      const prevBtn = document.getElementById("prev-slide");
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        slides[currentSlide].classList.remove("active");
+        currentSlide = (index + slides.length) % slides.length;
+        slides[currentSlide].classList.add("active");
+      }
+
+      nextBtn.addEventListener("click", () => showSlide(currentSlide + 1));
+      prevBtn.addEventListener("click", () => showSlide(currentSlide - 1));
+
+      // Auto-play slider
+      setInterval(() => showSlide(currentSlide + 1), 5000);
+
+      // Form Submission
+      const contactForm = document.getElementById("contact-form");
+      contactForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const formData = new FormData(contactForm);
+        const data = Object.fromEntries(formData.entries());
+
+        alert("Thank you! Your message has been sent (simulation).");
+        contactForm.reset();
+      });
+    </script>
+  </body>
+</html>
