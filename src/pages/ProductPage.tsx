@@ -30,8 +30,8 @@ export const ProductPage: React.FC = () => {
     switch (name) {
       case "Refined Palm Oil":
         return [
-          { id: 1, size: "850 gm Pouch", img: "/images/palmoil-pouch.jpeg" },
-          { id: 2, size: "15 kg Tin", img: "/images/palmoil-tin.jpeg" },
+          { id: 1, size: "850 gm Pouch", img: "/images/palmoil-pouch.png" },
+          { id: 2, size: "15 kg Tin", img: "/images/palmoil-tin.png" },
         ];
       case "Groundnut Oil":
         return [
@@ -43,21 +43,21 @@ export const ProductPage: React.FC = () => {
         ];
       case "Sunflower Oil":
         return [
-          { id: 1, size: "910 gm Pouch", img: "/images/sunflower-pouch.jpeg" },
+          { id: 1, size: "910 gm Pouch", img: "/images/sunflower-pouch.png" },
           {
             id: 2,
             size: "910 gm Bottle",
-            img: "/images/sunflower-bottle.jpeg",
+            img: "/images/sunflower-bottle.png",
           },
-          { id: 3, size: "15 kg Tin", img: "/images/sunflower-tin.jpeg" },
+          { id: 3, size: "15 kg Tin", img: "/images/sunflower-tin.png" },
         ];
       case "Coconut Oil":
         return [
-          { id: 1, size: "1 Litre Bottle", img: "/images/coconut-bottle.jpeg" },
+          { id: 1, size: "1 Litre Bottle", img: "/images/coconut-bottle.png" },
         ];
       case "Sesame Oil":
         return [
-          { id: 1, size: "1 Litre Bottle", img: "/images/sesame-bottle.jpeg" },
+          { id: 1, size: "1 Litre Bottle", img: "/images/sesame-bottle.png" },
         ];
       default:
         return [{ id: 1, size: "1 Litre Bottle", img: defaultImg }];
