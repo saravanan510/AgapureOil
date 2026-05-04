@@ -41,10 +41,10 @@ export default function App() {
     address: "",
     message: "",
     oilQuantity: "",
-    oilUnit: "Litre",
+    oilUnit: "Gram",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const CONTACT_EMAIL = "rv.vgnesh@gmail.com";
+  const CONTACT_EMAIL = "info@agapurelife.com";
   const [isCaptchaLoading, setIsCaptchaLoading] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -70,7 +70,7 @@ export default function App() {
       id: 1,
       title: "Pure & High-Quality Edible Oils",
       subtitle: "Your trusted partner in delivering quality you can trust.",
-      image: "/images/hero-banner.jpg",
+      image: "/images/ag-banner1.png",
       cta: "Explore Products",
       link: "#products",
     },
@@ -78,8 +78,8 @@ export default function App() {
       id: 2,
       title: "Coimbatore-Based Manufacturer",
       subtitle:
-        "Specializing in Refined Palm, Groundnut, Sunflower, and Coconut oils.",
-      image: "/images/hero-banner.jpg",
+        "Specializing in Refined Palm, Groundnut, Sunflower, Coconut, and Sesame oils.",
+      image: "/images/ag-banner2.png",
       cta: "About Us",
       link: "#about-us",
     },
@@ -88,7 +88,7 @@ export default function App() {
       title: "Bulk Supply & Wholesale Pricing",
       subtitle:
         "Serving wholesalers, retailers, and bulk buyers across various markets.",
-      image: "/images/hero-banner.jpg",
+      image: "/images/ag-banner1.png",
       cta: "Contact Us",
       link: "#contact",
     },
@@ -97,7 +97,7 @@ export default function App() {
       title: "Hygienic Processing & Packaging",
       subtitle:
         "Ensuring the highest standards of safety and purity in every drop.",
-      image: "/images/hero-banner.jpg",
+      image: "/images/ag-banner1.png",
       cta: "Our Quality",
       link: "#why-choose-us",
     },
@@ -105,7 +105,7 @@ export default function App() {
       id: 5,
       title: "Trusted by Thousands of Families",
       subtitle: "Bringing health and taste to your kitchen with Agapure oils.",
-      image: "/images/hero-banner.jpg",
+      image: "/images/ag-banner1.png",
       cta: "View Products",
       link: "#products",
     },
@@ -168,7 +168,7 @@ export default function App() {
           address: "",
           message: "",
           oilQuantity: "",
-          oilUnit: "Litre",
+          oilUnit: "Gram",
         });
         setTimeout(() => setIsSuccess(false), 5000);
       } else {
@@ -209,7 +209,7 @@ export default function App() {
                       "@context": "https://schema.org",
                       "@type": "LocalBusiness",
                       name: "Agapure Enterprises",
-                      image: "https://agapurelife.com/images/logo.jpg",
+                      image: "https://agapurelife.com/images/logo.png",
                       address: {
                         "@type": "PostalAddress",
                         streetAddress:

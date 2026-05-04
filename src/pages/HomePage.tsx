@@ -65,7 +65,7 @@ export const HomePage: React.FC<HomeProps> = ({
       {/* HERO SECTION */}
       <section
         id="home"
-        className="relative h-[100vh] min-h-[700px] w-full overflow-hidden bg-black pt-20 md:pt-24"
+        className="relative h-[100vh] min-h-[700px] w-full overflow-hidden bg-black pt-12 md:pt-16"
       >
         <AnimatePresence initial={false} mode="wait">
           <motion.div
@@ -76,7 +76,7 @@ export const HomePage: React.FC<HomeProps> = ({
             transition={{ duration: 1 }}
             className="absolute inset-0"
           >
-            <div className="absolute inset-0 bg-black/40 z-10" />
+            <div className="absolute inset-0 bg-black/20 z-10" />
             <img
               src={slides[currentSlide].image}
               alt="Banner"
@@ -185,7 +185,7 @@ export const HomePage: React.FC<HomeProps> = ({
         className="relative h-[400px] flex items-center justify-center overflow-hidden"
       >
         <motion.div style={{ y: backgroundY }} className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-black/50 z-10" />
+          <div className="absolute inset-0 bg-black/20 z-10" />
           <img
             src="/images/parallax-bg.jpg"
             alt="Parallax Background"
@@ -204,7 +204,7 @@ export const HomePage: React.FC<HomeProps> = ({
             We believe in contributing our commitment to excellence in every
             aspect of production and distribution of healthy products. We aspire
             to discover newer, bigger and brighter horizons for ourselves, our
-            partners and above all for our consumers.{" "}
+            partners and above all for our consumers.
           </motion.p>
         </div>
       </section>
@@ -220,58 +220,101 @@ export const HomePage: React.FC<HomeProps> = ({
               Pure, High-Quality Edible Oils
             </h3>
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                name: "Refined Palm Oil",
-                img: "/images/palm-oil.jpg",
-                desc: "High stability at high temperatures, perfect for deep frying.",
-              },
-              {
-                name: "Groundnut Oil",
-                img: "/images/groundnut-oil.jpg",
-                desc: "Extracted from high-quality peanuts with rich aroma.",
-              },
-              {
-                name: "Sunflower Oil",
-                img: "/images/sunflower-oil.jpg",
-                desc: "Low cholesterol and rich in Vitamin E for healthy cooking.",
-              },
-              {
-                name: "Coconut Oil",
-                img: "/images/coconut-oil.jpg",
-                desc: "Natural properties retained for traditional recipes.",
-              },
-            ].map((p, i) => (
-              <motion.div
-                key={p.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg group"
-              >
-                <Link
-                  to={`/products/${encodeURIComponent(p.name)}`}
-                  className="block"
+          <div className="flex flex-col gap-8">
+            {/* Top Row: 3 Products */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  name: "Refined Palm Oil",
+                  img: "/images/palm-oil.png",
+                  desc: "High stability at high temperatures, perfect for deep frying.",
+                },
+                {
+                  name: "Groundnut Oil",
+                  img: "/images/groundnut-oil.png",
+                  desc: "Extracted from high-quality peanuts with rich aroma.",
+                },
+                {
+                  name: "Sunflower Oil",
+                  img: "/images/sunflower-oil.png",
+                  desc: "Low cholesterol and rich in Vitamin E for healthy cooking.",
+                },
+              ].map((p, i) => (
+                <motion.div
+                  key={p.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-white rounded-2xl overflow-hidden shadow-lg group"
                 >
-                  <div className="h-64 overflow-hidden bg-gray-50 flex items-center justify-center p-4">
-                    <img
-                      src={p.img}
-                      alt={p.name}
-                      className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
-                      referrerPolicy="no-referrer"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <h4 className="text-xl font-bold mb-3">{p.name}</h4>
-                    <p className="text-gray-500 text-sm mb-6">{p.desc}</p>
-                    <div className="w-full py-3 rounded-xl font-bold text-sm uppercase tracking-widest btn-fill text-center">
-                      View
+                  <Link
+                    to={`/products/${encodeURIComponent(p.name)}`}
+                    className="block"
+                  >
+                    <div className="h-64 overflow-hidden bg-gray-50 flex items-center justify-center p-4">
+                      <img
+                        src={p.img}
+                        alt={p.name}
+                        className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                        referrerPolicy="no-referrer"
+                      />
                     </div>
-                  </div>
-                </Link>
-              </motion.div>
-            ))}
+                    <div className="p-6">
+                      <h4 className="text-xl font-bold mb-3">{p.name}</h4>
+                      <p className="text-gray-500 text-sm mb-6">{p.desc}</p>
+                      <div className="w-full py-3 rounded-xl font-bold text-sm uppercase tracking-widest btn-fill text-center">
+                        View
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Bottom Row: 2 Products Centered */}
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 lg:max-w-[calc(66.66%+2rem)] lg:mx-auto">
+              {[
+                {
+                  name: "Coconut Oil",
+                  img: "/images/coconut-oil.png",
+                  desc: "Natural properties retained for traditional recipes.",
+                },
+                {
+                  name: "Sesame Oil",
+                  img: "/images/sesame-bottle.png",
+                  desc: "Cold-pressed quality with authentic flavor and health benefits.",
+                },
+              ].map((p, i) => (
+                <motion.div
+                  key={p.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: (i + 3) * 0.1 }}
+                  className="bg-white rounded-2xl overflow-hidden shadow-lg group"
+                >
+                  <Link
+                    to={`/products/${encodeURIComponent(p.name)}`}
+                    className="block"
+                  >
+                    <div className="h-64 overflow-hidden bg-gray-50 flex items-center justify-center p-4">
+                      <img
+                        src={p.img}
+                        alt={p.name}
+                        className="max-w-full max-h-full object-contain group-hover:scale-110 transition-transform duration-500"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <h4 className="text-xl font-bold mb-3">{p.name}</h4>
+                      <p className="text-gray-500 text-sm mb-6">{p.desc}</p>
+                      <div className="w-full py-3 rounded-xl font-bold text-sm uppercase tracking-widest btn-fill text-center">
+                        View
+                      </div>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -466,7 +509,8 @@ export const HomePage: React.FC<HomeProps> = ({
                       setFormData({ ...formData, oilUnit: e.target.value })
                     }
                   >
-                    <option value="ML">ML</option>
+                    <option value="Gram">Gram</option>
+                    <option value="Kg">Kg</option>
                     <option value="Litre">Litre</option>
                   </select>
                   <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-black/40">
