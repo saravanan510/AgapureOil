@@ -86,7 +86,7 @@ export const HomePage: React.FC<HomeProps> = ({
           </motion.div>
         </AnimatePresence>
 
-        <div className="relative z-20 h-full flex items-center justify-center text-center px-6">
+        {/* <div className="relative z-20 h-full flex items-center justify-center text-center px-6">
           <div className="max-w-4xl">
             <motion.h1
               key={`t-${currentSlide}`}
@@ -112,7 +112,7 @@ export const HomePage: React.FC<HomeProps> = ({
               {slides[currentSlide].cta}
             </a>
           </div>
-        </div>
+        </div> */}
 
         <button
           onClick={prevSlide}
