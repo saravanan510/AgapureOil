@@ -146,12 +146,10 @@ Message: ${message || "No message provided"}
     } else {
       // Fallback if SMTP is not configured
       console.log("SMTP not configured. Email logged above.");
-      return res
-        .status(200)
-        .json({
-          success: true,
-          message: "Email received (logged to server console)",
-        });
+      return res.status(200).json({
+        success: true,
+        message: "Email received (logged to server console)",
+      });
     }
   });
 
