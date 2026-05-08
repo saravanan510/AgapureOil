@@ -40,8 +40,8 @@ export default function App() {
     phone: "",
     address: "",
     message: "",
-    oilQuantity: "",
-    oilUnit: "Gram",
+    productName: "",
+    productVariant: "",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const CONTACT_EMAIL = "info@agapurelife.com";
@@ -68,46 +68,11 @@ export default function App() {
   const slides = [
     {
       id: 1,
-      title: "Pure & High-Quality Edible Oils",
-      subtitle: "Your trusted partner in delivering quality you can trust.",
       image: "/images/ag-banner1.png",
-      cta: "Explore Products",
-      link: "#products",
     },
     {
       id: 2,
-      title: "Coimbatore-Based Manufacturer",
-      subtitle:
-        "Specializing in Refined Palm, Groundnut, Sunflower, Coconut, and Sesame oils.",
       image: "/images/ag-banner2.png",
-      cta: "About Us",
-      link: "#about-us",
-    },
-    {
-      id: 3,
-      title: "Bulk Supply & Wholesale Pricing",
-      subtitle:
-        "Serving wholesalers, retailers, and bulk buyers across various markets.",
-      image: "/images/ag-banner1.png",
-      cta: "Contact Us",
-      link: "#contact",
-    },
-    {
-      id: 4,
-      title: "Hygienic Processing & Packaging",
-      subtitle:
-        "Ensuring the highest standards of safety and purity in every drop.",
-      image: "/images/ag-banner1.png",
-      cta: "Our Quality",
-      link: "#why-choose-us",
-    },
-    {
-      id: 5,
-      title: "Trusted by Thousands of Families",
-      subtitle: "Bringing health and taste to your kitchen with Agapure oils.",
-      image: "/images/ag-banner1.png",
-      cta: "View Products",
-      link: "#products",
     },
   ];
 
@@ -130,6 +95,10 @@ export default function App() {
     // Validation
     const newErrors: Record<string, string> = {};
     if (!formData.name.trim()) newErrors.name = "Name is required";
+    if (!formData.productName)
+      newErrors.productName = "Product selection is required";
+    if (!formData.productVariant)
+      newErrors.productVariant = "Size/Variant selection is required";
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
@@ -167,8 +136,8 @@ export default function App() {
           phone: "",
           address: "",
           message: "",
-          oilQuantity: "",
-          oilUnit: "Gram",
+          productName: "",
+          productVariant: "",
         });
         setTimeout(() => setIsSuccess(false), 5000);
       } else {

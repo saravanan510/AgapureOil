@@ -63,10 +63,8 @@ export const HomePage: React.FC<HomeProps> = ({
       transition={{ duration: 0.5 }}
     >
       {/* HERO SECTION */}
-      <section
-        id="home"
-        className="relative h-[100vh] min-h-[700px] w-full overflow-hidden bg-black pt-12 md:pt-16"
-      >
+      {/* HERO SECTION */}
+      <section id="home" className="relative min-h-[720px] flex justify-center">
         <AnimatePresence initial={false} mode="wait">
           <motion.div
             key={currentSlide}
@@ -74,13 +72,12 @@ export const HomePage: React.FC<HomeProps> = ({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 1 }}
-            className="absolute inset-0"
+            className="absolute inset-0 w-full h-full flex items-center justify-center"
           >
-            <div className="absolute inset-0 bg-black/20 z-10" />
             <img
               src={slides[currentSlide].image}
+              className=" h-full object-contain object-center"
               alt="Banner"
-              className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
           </motion.div>
@@ -112,7 +109,7 @@ export const HomePage: React.FC<HomeProps> = ({
               {slides[currentSlide].cta}
             </a>
           </div>
-        </div> */}
+        </div> 
 
         <button
           onClick={prevSlide}
@@ -125,7 +122,7 @@ export const HomePage: React.FC<HomeProps> = ({
           className="absolute right-6 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-white/10 text-white hover:bg-white/20 btn-shiny"
         >
           <ChevronRight size={32} />
-        </button>
+        </button>*/}
       </section>
 
       {/* ABOUT US SECTION */}
@@ -226,7 +223,7 @@ export const HomePage: React.FC<HomeProps> = ({
               {[
                 {
                   name: "Refined Palm Oil",
-                  img: "/images/palm-oil.png",
+                  img: "/images/palmoil-pouch.png",
                   desc: "High stability at high temperatures, perfect for deep frying.",
                 },
                 {
@@ -236,7 +233,7 @@ export const HomePage: React.FC<HomeProps> = ({
                 },
                 {
                   name: "Sunflower Oil",
-                  img: "/images/sunflower-oil.png",
+                  img: "/images/sunflower-pouch.png",
                   desc: "Low cholesterol and rich in Vitamin E for healthy cooking.",
                 },
               ].map((p, i) => (
@@ -489,34 +486,110 @@ export const HomePage: React.FC<HomeProps> = ({
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div className="relative">
-                  <input
-                    type="number"
-                    placeholder="Enter Oil Quantity"
-                    className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl text-black/80 placeholder:text-black/40 transition-all focus:ring-2 focus:ring-primary/20 outline-none"
-                    value={formData.oilQuantity}
-                    onChange={(e) =>
-                      setFormData({ ...formData, oilQuantity: e.target.value })
+              <div className="relative">
+                <select
+                  className={`w-full p-4 bg-gray-50 border ${errors.productName ? "border-red-500 bg-red-50" : "border-gray-200"} rounded-xl appearance-none cursor-pointer text-black/80 transition-all focus:ring-2 focus:ring-primary/20 outline-none`}
+                  value={formData.productName}
+                  onChange={(e) => {
+                    const newProd = e.target.value;
+                    setFormData({
+                      ...formData,
+                      productName: newProd,
+                      productVariant: "",
+                    });
+                    if (errors.productName) {
+                      const newErrs = { ...errors };
+                      delete newErrs.productName;
+                      setErrors(newErrs);
                     }
-                  />
+                  }}
+                >
+                  <option value="" disabled>
+                    Select Product *
+                  </option>
+                  <option value="Refined Palm Oil">Refined Palm Oil</option>
+                  <option value="Groundnut Oil">Groundnut Oil</option>
+                  <option value="Sunflower Oil">Sunflower Oil</option>
+                  <option value="Coconut Oil">Coconut Oil</option>
+                  <option value="Sesame Oil">Sesame Oil</option>
+                </select>
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-black/40">
+                  <ChevronDown size={20} />
                 </div>
-                <div className="relative">
-                  <select
-                    className="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl appearance-none cursor-pointer text-black/80 transition-all focus:ring-2 focus:ring-primary/20 outline-none"
-                    value={formData.oilUnit}
-                    onChange={(e) =>
-                      setFormData({ ...formData, oilUnit: e.target.value })
+                <AnimatePresence>
+                  {errors.productName && (
+                    <motion.span
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -10 }}
+                      className="absolute -bottom-5 left-2 text-[10px] text-red-500 font-bold uppercase tracking-tighter"
+                    >
+                      {errors.productName}
+                    </motion.span>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              <div className="relative">
+                <select
+                  className={`w-full p-4 bg-gray-50 border ${errors.productVariant ? "border-red-500 bg-red-50" : "border-gray-200"} rounded-xl appearance-none cursor-pointer text-black/80 transition-all focus:ring-2 focus:ring-primary/20 outline-none`}
+                  value={formData.productVariant}
+                  onChange={(e) => {
+                    setFormData({
+                      ...formData,
+                      productVariant: e.target.value,
+                    });
+                    if (errors.productVariant) {
+                      const newErrs = { ...errors };
+                      delete newErrs.productVariant;
+                      setErrors(newErrs);
                     }
-                  >
-                    <option value="Gram">Gram</option>
-                    <option value="Kg">Kg</option>
-                    <option value="Litre">Litre</option>
-                  </select>
-                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-black/40">
-                    <ChevronDown size={20} />
-                  </div>
+                  }}
+                  disabled={!formData.productName}
+                >
+                  <option value="" disabled>
+                    {formData.productName
+                      ? "Select Size/Variant *"
+                      : "Please select a product first"}
+                  </option>
+                  {formData.productName === "Refined Palm Oil" && (
+                    <>
+                      <option value="850 gm Pouch">850 gm Pouch</option>
+                      <option value="15 kg Tin">15 kg Tin</option>
+                    </>
+                  )}
+                  {formData.productName === "Groundnut Oil" && (
+                    <option value="1 Litre Bottle">1 Litre Bottle</option>
+                  )}
+                  {formData.productName === "Sunflower Oil" && (
+                    <>
+                      <option value="910 gm Pouch">910 gm Pouch</option>
+                      <option value="910 gm Bottle">910 gm Bottle</option>
+                      <option value="15 kg Tin">15 kg Tin</option>
+                    </>
+                  )}
+                  {formData.productName === "Coconut Oil" && (
+                    <option value="1 Litre Bottle">1 Litre Bottle</option>
+                  )}
+                  {formData.productName === "Sesame Oil" && (
+                    <option value="1 Litre Bottle">1 Litre Bottle</option>
+                  )}
+                </select>
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-black/40">
+                  <ChevronDown size={20} />
                 </div>
+                <AnimatePresence>
+                  {errors.productVariant && (
+                    <motion.span
+                      initial={{ opacity: 0, x: -10 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: -10 }}
+                      className="absolute -bottom-5 left-2 text-[10px] text-red-500 font-bold uppercase tracking-tighter"
+                    >
+                      {errors.productVariant}
+                    </motion.span>
+                  )}
+                </AnimatePresence>
               </div>
 
               <div className="relative">
